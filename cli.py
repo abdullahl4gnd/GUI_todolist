@@ -1,6 +1,9 @@
 import functions
 import time
 
+
+
+
 now =time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 print("it is " ,now)
 

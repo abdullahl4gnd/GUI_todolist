@@ -1,7 +1,11 @@
 import functions
-
 import FreeSimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass  # Create the file if it doesn't exist
 
 sg.theme("DarkBrown4")  # Set the theme for the GUI
 
@@ -60,11 +64,10 @@ while True :
             except IndexError:
                 sg.popup("Please: 1) Select an item 2) Click Complete", font=("Helvetica", 20))
 
-        case "Exit":
-            break
-
         case "todos":
             window["todo"].update(value=values["todos"][0].strip())
+        case "Exit":
+            break
         case sg.WIN_CLOSED:
             break
 
